@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: ./project
+      dockerfile: Dockerfile
+    container_name: telegram_bot
+    volumes:
+      - .:/home/app/bot
+    env_file:
+      - ./project/.env
