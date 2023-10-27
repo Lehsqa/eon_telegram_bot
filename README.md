@@ -2,7 +2,7 @@
 
 ## Configuration
 
-### Before starting need to config .env file:
+### Before starting need to config project/.env file:
 ### `BOT_TOKEN` - Telegram bot token
 
 ## Running
@@ -12,4 +12,4 @@
 
 ## Functionality
 
-### Sending zip for getting first lines from each files
+### Sending .zip file for getting first lines from each unzip files
