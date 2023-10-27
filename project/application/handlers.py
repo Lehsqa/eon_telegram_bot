@@ -1,8 +1,6 @@
+import os
 import logging
-from os.path import join
 from typing import Optional
-
-from os import makedirs, path
 
 import shutil
 
@@ -30,17 +28,17 @@ async def zip_handler(message: types.Message):
     if document.mime_type == 'application/zip':
         # Construct the download path and
         # download the document to the specified path
-        download_path: str = join(FILES_PATH, document.file_name)
-        makedirs(path.dirname(FILES_PATH), exist_ok=True)
+        download_path: str = os.path.join(FILES_PATH, document.file_name)
+        os.makedirs(os.path.dirname(FILES_PATH), exist_ok=True)
         await bot.download(document, download_path)
 
         # Define the unzip directory and
         # process the unzipped files
-        unzip_path: str = join(FILES_PATH, document.file_id)
+        unzip_path: str = os.path.join(FILES_PATH, document.file_id)
         try:
             await unzip(download_path, unzip_path)
 
-            result_file_path: str = join(unzip_path, RESULT_FILE)
+            result_file_path: str = os.path.join(unzip_path, RESULT_FILE)
             await read_save(unzip_path, result_file_path)
 
             result: FSInputFile = FSInputFile(result_file_path)

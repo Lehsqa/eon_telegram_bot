@@ -32,9 +32,8 @@ async def read_save(files_path: str, save_path: str):
             read_tasks.append(read_first_line(file_path, lines, languages))
     await asyncio.gather(*read_tasks)
 
-    # Process a transform of languages set to list of bytes,
-    # add to all first lines and
-    # save it to result file
+    # Process a transform of languages set to list of bytes and
+    # save all to a result file
     if not languages:
         languages.add('Not defined')
     project_type: list[bytes] = [' '.join(languages).encode('utf-8') + b'\n']
