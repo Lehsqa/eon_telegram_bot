@@ -46,7 +46,9 @@ ENV APP_HOME=/home/app/bot
 WORKDIR $APP_HOME
 
 # install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends netcat
+RUN apt-get update &&  \
+    apt-get install -y --no-install-recommends netcat &&  \
+    apt-get install -y libmagic-dev
 COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --upgrade pip
