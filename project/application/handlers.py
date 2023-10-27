@@ -28,7 +28,7 @@ async def zip_handler(message: types.Message):
     if document.mime_type == 'application/zip':
         # Construct the download path and
         # download the document to the specified path
-        download_path: str = os.path.join(FILES_PATH, document.file_name)
+        download_path: str = os.path.join(FILES_PATH, f'{document.file_id}.zip')
         os.makedirs(os.path.dirname(FILES_PATH), exist_ok=True)
         await bot.download(document, download_path)
         logging.info(f'chat_id={message.chat.id}, file={document.file_name}:Zip file was downloaded')
