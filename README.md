@@ -1,4 +1,4 @@
-# Getting started with Telegram OpenAI Bot
+# Getting started with Unzip Telegram Bot
 
 ## Configuration
 
@@ -7,7 +7,7 @@
 
 ### After that the infrastructure/config can be modified, but it's not needed
 1) ### `FILES_PATH` - directory, where files will be placed
-2) ### `RESULT_FILE` - result file of all processing
+2) ### `RESULT_FILE` - result file of all processes
 3) ### `UNZIP_WORKERS` - count of workers which will be used for unzipping
 4) ### `LANGUAGE_EXTENSIONS` - tuple of programming languages which used for identify type of files
 
